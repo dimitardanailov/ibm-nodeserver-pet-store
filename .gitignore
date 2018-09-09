@@ -1,3 +1,8 @@
+# local.json should be in our git history
+!server/config/*
+# all other files should be excluded and removed from our git history
+server/*
+
 node_modules
 node_modules_linux
 server/localdev-config.json

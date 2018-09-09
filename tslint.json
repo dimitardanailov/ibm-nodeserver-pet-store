@@ -1,0 +1,55 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended",
+		"tslint-config-prettier"
+	],
+	"jsRules": {},
+	"linterOptions": {
+		"exclude": [
+			"node_modules"
+		]
+	},
+	"rules": {
+		"indent": [
+			"error",
+			2
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"single"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"no-console": false,
+		"no-undef": false,
+		"class-name": false,
+		"camelcase": [
+			"error",
+			{
+				"properties": "never"
+			}
+		],
+		"interface-name": [
+			true,
+			"never-prefix"
+		],
+		"member-access": false,
+		"object-literal-sort-keys": false,
+		"max-classes-per-file": false,
+		"ordered-imports": false,
+		"no-string-literal": false,
+		"comment-format": false,
+		"no-var-requires": false,
+		"no-shadowed-variable": false,
+		"radix": false,
+		"no-empty-interface": false
+	},
+	"rulesDirectory": []
+}
