@@ -19,6 +19,32 @@ export class PetController {
 		return pets;
 	}
 
+	@Get('/hello-world-streams')
+	async streams() {
+		// Get Mongodb cursor
+		const cursor = this.repository.getCursorToAllRecords();
+
+		const promise = new Promise((resolve, reject) => {
+			cursor.on('data', doc => {
+				console.log(doc);
+			});
+
+			cursor.on('close', () => {
+				resolve();
+			});
+
+			cursor.on('error', error => {
+				reject(error);
+			});
+		});
+
+		return await promise.then(() => {
+			return 'Stream was closed';
+		}).catch(_error => {
+			return 'Ops, something is wrong';
+		});
+	}
+
 	@Get("/:id")
 	getOne(@Param("id") id: number) {
 		return "This action returns pet #" + id;
