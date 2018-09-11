@@ -1,25 +1,22 @@
-# pet-store
-A generated IBM Cloud application
+# Pet Store 
 
-[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
+Pet store is a microservice which is design to work millions records and upload them on Amazon S3. 
+
+This project has purpose to give you an example how to work with: 
+
+- IBM NodeServer Generator
+- Routing-controllers
+- MongoDB and Mongoose
+- Nodejs Streams
+- Mocha, chai and istanbul
+- Tus.io
 
 ## Run locally as Node.js application
 
 ```bash
+npm install -g typescript
 npm install
+tsc
 npm test
 npm start
-```
-
-## Build, run, and deploy using IDT
-
-```bash
-# Install needed dependencies:
-npm run idt:install
-# Build the docker image for your app:
-npm run idt:build
-# Run the app locally through docker:
-npm run idt:run
-# Deploy your app to IBM Cloud:
-npm run idt:deploy
 ```
