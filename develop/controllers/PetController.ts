@@ -3,6 +3,7 @@ import { JsonController, Get, Controller, Param, Post } from "routing-controller
 import { PetRepository } from "../repositories/PetRepository";
 import { IPet } from "../interfaces/IPet";
 import { Pet } from "../models/Pet";
+import { Readable } from "stream";
 
 @JsonController()
 // Create a controller prefix for each end point
@@ -24,12 +25,36 @@ export class PetController {
 		// Get Mongodb cursor
 		const cursor = this.repository.getCursorToAllRecords();
 
+		// Create a new memory steam
+		const _petstoreStream = new Readable({
+			read() {}
+		});
+
+		// Create a new JSON array
+		_petstoreStream.push('[');
+
 		const promise = new Promise((resolve, reject) => {
+
+			let firstRecord = true; 
 			cursor.on('data', doc => {
-				console.log(doc);
+				// Add a new record 
+				if (!firstRecord) {
+					_petstoreStream.push(`,${JSON.stringify(doc)}`);
+				}
+				else {
+					_petstoreStream.push(JSON.stringify(doc));
+				}
+				firstRecord = false;
 			});
 
 			cursor.on('close', () => {
+				// Close JSON array
+				_petstoreStream.push(']');
+				
+				// Our memory stream ready to be closed
+				// .push(null) gives signal - No more data
+				_petstoreStream.push(null);
+
 				resolve();
 			});
 
@@ -37,6 +62,15 @@ export class PetController {
 				reject(error);
 			});
 		});
+
+		// The 'end' event is emitted when there is no more data to be consumed from the stream.
+		_petstoreStream.on('end', () => {
+			console.log('\x1b[33m%s\x1b[0m', 'Memory stream was created successfully.');
+		});
+		
+		// To consume this simple readable stream, 
+		// we can simply pipe it into the writable stream process.stdout
+		_petstoreStream.pipe(process.stdout);
 
 		return await promise.then(() => {
 			return 'Stream was closed';
