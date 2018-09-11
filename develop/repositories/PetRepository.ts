@@ -30,6 +30,10 @@ export class PetRepository {
 		});
 	}
 
+	getCursorToAllRecords() {
+		return Pet.find().cursor();
+	}
+
 	save(Pet: Pet): Promise<Pet> {
 		return Promise.resolve(Pet.save());
 	}
