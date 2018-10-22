@@ -23,7 +23,7 @@ Article:
 
 - [Chapter 1: Introduction](https://medium.com/p/fafc208e40ad)
 - [Chapter 2: IBM NodeServer Generator](https://medium.com/p/87a6be6095ca)
-- Chapter 3: [Cleaning the house](https://medium.com/@d_danailov/nodejs-microservice-importing-millions-records-on-amazon-s3-cleaning-the-house-chapter-3-eb7c5eb9c2d0)
+- [Chapter 3: Cleaning the house](https://medium.com/@d_danailov/nodejs-microservice-importing-millions-records-on-amazon-s3-cleaning-the-house-chapter-3-eb7c5eb9c2d0)
 - Chapter 4: TypeScript and routing-controllers
 - Chapter 5: MongoDB and Mongoose
 - Chapter 6: Nodejs Streams
