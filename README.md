@@ -27,7 +27,7 @@ Article:
 - [Chapter 4: TypeScript and routing-controllers](https://medium.com/@d_danailov/nodejs-microservice-importing-millions-records-on-amazon-s3-typescript-and-routing-controllers-3a296c622a3f)
 - Chapter 5: MongoDB and Mongoose
 - Chapter 6: Nodejs Streams
-- Chapter 7: Amazon S3 and Why memory streams are not silver bullet
+- Chapter 7: Amazon S3 and why memory streams aren't a silver bullet ?
 - Chapter 8: Mocha, chai and istanbul 
 - Chapter 9: Tus.io
 
