@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - strong-supervisor > lodash:
+        patched: '2020-04-30T21:37:00.028Z'
+    - mongoose > async > lodash:
+        patched: '2020-04-30T21:37:00.028Z'
+    - strong-supervisor > async > lodash:
+        patched: '2020-04-30T21:37:00.028Z'
+    - appmetrics-dash > appmetrics > ibmapm-embed > kubernetes-client > async > lodash:
+        patched: '2020-04-30T21:37:00.028Z'
+    - appmetrics-prometheus > appmetrics > ibmapm-embed > kubernetes-client > async > lodash:
+        patched: '2020-04-30T21:37:00.028Z'
