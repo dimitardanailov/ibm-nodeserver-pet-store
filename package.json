@@ -23,7 +23,7 @@
     "appmetrics-prometheus": "^2.0.0",
     "appmetrics-zipkin": "^1.0.4",
     "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "express": "^4.19.2",
     "ibm-cloud-env": "^0",
     "log4js": "^1.1.1",
     "mongoose": "^5.2.13",
